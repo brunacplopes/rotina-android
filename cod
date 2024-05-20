@@ -1,0 +1,76 @@
+package com.example.myroutine
+
+import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.*
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
+import com.example.myroutine.ui.theme.MyroutineTheme
+import androidx.compose.ui.unit.dp
+
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContent {
+            MyroutineTheme {
+                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                    Column(modifier = Modifier.padding(innerPadding)) {
+                        Greeting("ROTINA DO DIA")
+                        Greeting("oii")
+                    }
+                }
+            }
+        }
+    }
+}
+
+@Composable
+fun Greeting(name: String, modifier: Modifier = Modifier) {
+    Column(modifier = modifier) {
+        Text(
+            text = "ROTINA DO DIA",
+            modifier = Modifier.padding(bottom = 8.dp)
+        )
+        Text(
+            text = "acordar ",
+            modifier = Modifier.padding(bottom = 8.dp)
+        )
+        Text(
+            text = "faculdade ",
+            modifier = Modifier.padding(bottom = 8.dp)
+        )
+        Text(
+            text = "almoço  ",
+            modifier = Modifier.padding(bottom = 8.dp)
+        )
+        Text(
+            text = "descanso ",
+            modifier = Modifier.padding(bottom = 8.dp)
+        )
+        Text(
+            text = "estudo ",
+            modifier = Modifier.padding(bottom = 8.dp)
+        )
+        Text(
+            text = "dormir ",
+            modifier = Modifier.padding(bottom = 8.dp)
+        )
+    }
+}
+
+
+@Preview(showBackground = true)
+@Composable
+fun GreetingPreview() {
+    MyroutineTheme {
+        Greeting("ROTINA DO DIA")
+        Greeting("oii")
+        Greeting("Outro texto abaixo do Android")
+    }
+}
